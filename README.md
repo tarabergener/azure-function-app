@@ -51,7 +51,7 @@ FUNCTION_KEY=<your-function-key>
 Example curl command:
 
 ```bash
-curl "$FUNCTION_APP_URL/api/httpget?name=Test&code=$FUNCTION_KEY"
+curl "$FUNCTION_APP_URL/api/httpget?name=World&code=$FUNCTION_KEY"
 ```
 
 Expected “Hello World” response:
