@@ -23,6 +23,7 @@
 3. Apply Terraform
 
    - Run "terraform fmt" to format the changes
+   - Run "terraform validate" to validate code changes and make sure everthing passes without error
    - Run "terraform plan" to check/verify changes
    - Run "terraform apply" to apply changes to Azure
 
