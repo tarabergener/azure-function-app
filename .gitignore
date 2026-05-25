@@ -9,3 +9,5 @@ bin/
 obj/
 
 .env
+
+function/http/local.settings.json
