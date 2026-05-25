@@ -1,3 +1,11 @@
-terraform/.terraform/
-*.tfstate
-*.tfstate.*
+# Terraform
+terraform.tfstate
+terraform.tfstate.backup
+*.tfvars
+.terraform/
+
+# .NET
+bin/
+obj/
+
+.env
