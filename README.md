@@ -8,7 +8,11 @@
    - Download Terraform and add it as an environment variable
    - Check Terraform version using "terraform version"
 
-3. Azure Functions Core Tools (if used)
+3. Azure Functions Core Tools (if used): 4.11.0
+   - Download Azure Function Core Tools 
+   - Run command "func init"
+   - To test the function on you local, run command "func start"
+   - Click link provided
 
 ✅ Deployment Steps
 1. Authenticate to Azure
@@ -28,12 +32,24 @@
    - Run "terraform apply" to apply changes to Azure
 
 4. Deploy the function code
+   
+   - Run command "func azure functionapp publish azure-function-bergener01 --build remote"
+   - Note: The deployment didn't run the actual httpGetFunction.cs so I had to enable the Microsoft.AlertsManagement resource provider for my subscription
+   - Run command "az provider register --namespace Microsoft.AlertsManagement"
+   - Note: You can run "az provider show -n Microsoft.AlertsManagement --query registrationState" to check the status
+   - When it said "Registered", I ran the build again
 
 ✅ Validation
 
-Example curl command or browser URL
-Expected “Hello World” response
+   -curl "https://azure-function-bergener01.azurewebsites.net/api/httpget?name=Test&code=<function-key>"
+
+Expected “Hello World” response:
+
+<img width="954" height="612" alt="Hello World" src="https://github.com/user-attachments/assets/8e75b5aa-2d59-4ff3-af6a-05364d3d57c3" />
 
 ✅ Cleanup
 
-Instructions to remove all created resources
+   - Navigate to the "terraform" folder
+   - Run command "terraform destroy"
+   - Type "yes" to confirm deletion
+   - Note: File terraform\versions.tf contains feature allowing complete deletion of resource group and all resources within it
