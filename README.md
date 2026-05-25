@@ -41,7 +41,18 @@
 
 ✅ Validation
 
-   -curl "https://azure-function-bergener01.azurewebsites.net/api/httpget?name=Test&code=<function-key>"
+Create a `.env` file:
+
+```env
+FUNCTION_APP_URL=https://azure-function-bergener01.azurewebsites.net
+FUNCTION_KEY=<your-function-key>
+```
+
+Example curl command:
+
+```bash
+curl "$FUNCTION_APP_URL/api/httpget?name=Test&code=$FUNCTION_KEY"
+```
 
 Expected “Hello World” response:
 
